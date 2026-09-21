@@ -1,0 +1,6 @@
+data/
+output/
+.pixi/
+.Rhistory
+.Rproj.user/
+.DS_Store
