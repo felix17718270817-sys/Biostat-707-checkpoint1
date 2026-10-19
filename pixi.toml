@@ -13,6 +13,12 @@ r-ggplot2 = "*"
 r-gtsummary = "*"
 r-naniar = "*"
 r-here = "*"
+r-glmnet = ">=5.0,<6"
+r-ranger = ">=0.18.0,<0.19"
+r-mgcv = ">=1.9_4,<2"
+r-gridextra = ">=2.3.1,<3"
+r-tidyverse = ">=2.0.0,<3"
 
 [tasks]
 checkpoint1 = "Rscript checkpoint1.R"
+checkpoint2 = "Rscript checkpoint2.R"

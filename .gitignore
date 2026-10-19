@@ -1,5 +1,7 @@
 data/
-output/
+output/*
+!output/checkpoint2.pdf
+!output/checkpoint3.pdf
 .pixi/
 .Rhistory
 .Rproj.user/
