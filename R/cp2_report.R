@@ -167,6 +167,7 @@ cp2_make_report <- function(w, x, oof, comparison, metrics, stability, fitted,
     "No clinical variable is dropped for low coverage. Counts are transformed with log(1 + count),",
     "so zero means no valid measurement and high counts have less influence. First values are omitted",
     "to reduce redundancy. Missing numeric values are filled with the training-fold median.",
+    "I chose medians because they are simple and less affected by extreme values.",
     "Columns with zero variance are removed using the training fold. Remaining columns are",
     "centered and scaled using that fold. The held-out fold never sets these values."
   ), 0.26)
@@ -243,12 +244,13 @@ cp2_make_report <- function(w, x, oof, comparison, metrics, stability, fitted,
 
   page_start("2.5 Nonlinear effects")
   paragraph(paste(
-    "Figure 3 shows centered smooth contributions to log odds from the refit GAM, with approximate",
-    "95% confidence bands. The x ranges cover the 2.5th to 97.5th observed percentiles.",
-    "The plots describe associations while the other inputs are held fixed; zero is a centered",
-    "reference, not an absolute risk of zero. All outer-fold predictions used fold-specific fits."
+    "The 12 smooth inputs were chosen to cover age and major organ function: Age; mean HR, MAP,",
+    "and Temp; minimum GCS, pH, and PaO2; maximum Creatinine, BUN, Lactate, and Glucose; and",
+    "mean Urine. Figure 3 shows three centered contributions to log odds, with approximate 95%",
+    "confidence bands. The x ranges cover the 2.5th to 97.5th observed percentiles. These are",
+    "adjusted associations; zero is a centered reference, not an absolute risk of zero."
   ), 0.88)
-  draw_plot(smooth_plot, 0.48, 0.64)
+  draw_plot(smooth_plot, 0.455, 0.61)
   descriptions <- vapply(names(smooth_results), function(variable) {
     z <- smooth_results[[variable]]
     low <- which.min(z$Effect)
