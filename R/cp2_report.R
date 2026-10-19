@@ -121,10 +121,9 @@ cp2_make_report <- function(w, x, oof, comparison, metrics, stability, fitted,
   page_start("Feature engineering and supervised modeling")
   heading("AI-use statement", 0.88)
   paragraph(paste(
-    "I prepared preliminary code and a report draft in Muse, but the results were not satisfactory.",
-    "I then used OpenAI Codex to substantially revise and complete the R analysis, debug the code,",
-    "and help interpret the results. Codex also helped expand and format the final report with",
-    "figures and tables. Checks included cross-validation, saved predictions, and visual review.",
+    "I prepared preliminary code and a report draft, and then I used OpenAI Codex to help me",
+    "revise and complete the R analysis, debug the code, and help interpret the results.",
+    "Codex also helped expand and format the final report with figures and tables.",
     "AI saved time, but it could still make coding or statistical mistakes. I am responsible for",
     "reviewing and understanding the final work."
   ), 0.85)
